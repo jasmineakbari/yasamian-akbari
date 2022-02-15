@@ -24,7 +24,17 @@ async function send_contact_email(input) {
         from: to_email,
         to: to_email, 
         subject: `New Portfolio Contact Request from ${email_req.contact_name}`,
-        html: ""
+        html: `<body>
+                <p>Contact Request Informaition</p>
+                </br>
+                <p>Name: ${email_req.contact_name}</p>
+                </br>
+                <p>Email: ${email_req.contact_email}</p>
+                </br>
+                <p>Phone: ${email_req.contact_phone_number}</p>
+                </br>
+                <p>Contact Message: ${email_req.contact_message}</p>
+                </body>`
     });
 
     console.log("Contact request sent!", email_data.messageId);
