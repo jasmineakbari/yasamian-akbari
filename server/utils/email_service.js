@@ -37,12 +37,7 @@ async function send_contact_email(input) {
                 <p>Contact Message: ${email_req.contact_message}</p>
                 </body>`
     });
-    
-    // Error Handling
-    transporter.sendMail(email_data, (error, response) => {
-        error ? console.log(error) : console.log(response);
-        smtpConfig.close();
-   });
+
 
     console.log("Contact request sent!", email_data.messageId);
 };

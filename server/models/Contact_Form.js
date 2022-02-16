@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/date_format');
 
 const contactFormSchema = new Schema(
@@ -33,5 +33,7 @@ const contactFormSchema = new Schema(
       }
     }
 );
+
+const contactForm = model('contact_form', contactFormSchema)
   
-module.exports = contactFormSchema;
+module.exports = contactForm;
